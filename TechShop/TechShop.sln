@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechShop.Data", "TechShop.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechShop.Model", "TechShop.Model\TechShop.Model.csproj", "{9A61D2C1-CA8E-4463-9FA1-CB3BD887F108}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechShop.Web", "TechShop.Web\TechShop.Web.csproj", "{42006527-272E-4095-B87D-57850EFDE677}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechShop.Service", "TechShop.Service\TechShop.Service.csproj", "{4761EE1F-BD5C-45E3-96F6-F31DE39E8A78}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechShop.UnitTest", "TechShop.UnitTest\TechShop.UnitTest.csproj", "{00C532CF-C23E-43A7-B63B-39BF0330C7FF}"
@@ -33,10 +31,6 @@ Global
 		{9A61D2C1-CA8E-4463-9FA1-CB3BD887F108}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A61D2C1-CA8E-4463-9FA1-CB3BD887F108}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A61D2C1-CA8E-4463-9FA1-CB3BD887F108}.Release|Any CPU.Build.0 = Release|Any CPU
-		{42006527-272E-4095-B87D-57850EFDE677}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{42006527-272E-4095-B87D-57850EFDE677}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{42006527-272E-4095-B87D-57850EFDE677}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{42006527-272E-4095-B87D-57850EFDE677}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4761EE1F-BD5C-45E3-96F6-F31DE39E8A78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4761EE1F-BD5C-45E3-96F6-F31DE39E8A78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4761EE1F-BD5C-45E3-96F6-F31DE39E8A78}.Release|Any CPU.ActiveCfg = Release|Any CPU
