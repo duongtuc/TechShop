@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechShop.Service", "TechSho
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechShop.UnitTest", "TechShop.UnitTest\TechShop.UnitTest.csproj", "{00C532CF-C23E-43A7-B63B-39BF0330C7FF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentation", "Presentation\Presentation.csproj", "{BA575C87-279C-4945-8829-BF3BECFCD25B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{00C532CF-C23E-43A7-B63B-39BF0330C7FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00C532CF-C23E-43A7-B63B-39BF0330C7FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00C532CF-C23E-43A7-B63B-39BF0330C7FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA575C87-279C-4945-8829-BF3BECFCD25B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA575C87-279C-4945-8829-BF3BECFCD25B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA575C87-279C-4945-8829-BF3BECFCD25B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA575C87-279C-4945-8829-BF3BECFCD25B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

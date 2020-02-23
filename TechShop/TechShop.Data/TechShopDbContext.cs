@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity.EntityFramework;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
@@ -8,7 +9,7 @@ using TechShop.Model.Models;
 
 namespace TechShop.Data
 {
-    public class TechShopDbContext:DbContext
+    public class TechShopDbContext: IdentityDbContext<ApplicationUser>
     {
         public TechShopDbContext():base("TechShopConnectionString")
         {
@@ -38,6 +39,18 @@ namespace TechShop.Data
         public DbSet<Error> Errors { set; get; }
         public DbSet<ContactDetail> ContactDetails { set; get; }
         public DbSet<Feedback> Feedbacks { set; get; }
+
+
+        public DbSet<ApplicationGroup> ApplicationGroups { set; get; }
+        public DbSet<ApplicationRole> ApplicationRoles { set; get; }
+        public DbSet<ApplicationRoleGroup> ApplicationRoleGroups { set; get; }
+        public DbSet<ApplicationUserGroup> ApplicationUserGroups { set; get; }
+
+        public static TechShopDbContext Create()
+        {
+            return new TechShopDbContext();
+        }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
