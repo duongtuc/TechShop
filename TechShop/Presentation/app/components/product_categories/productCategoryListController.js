@@ -14,6 +14,7 @@
 
         $scope.pagesCount = 0;
 
+        $scope.keyword = '';
 
         $scope.getProductCategories = getProductCategories;
 
@@ -21,6 +22,7 @@
             page = page || 0;
             var config = {
                 params: {
+                    keyword: $scope.keyword,
                     page: page,
                     pageSize: 2
 
