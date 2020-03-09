@@ -1,3 +1,3 @@
 ﻿(function () {
-    angular.module("techShop.common", ['ui.router'])
+    angular.module("techShop.common", ['ui.router', 'ngBootbox', 'ngCkeditor','LocalStorageModule'])
 })();

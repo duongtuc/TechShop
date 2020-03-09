@@ -57,7 +57,7 @@ namespace TechShop.Service
         public IEnumerable<ProductCategory> GetAll(string keyword)
         {
             if (!string.IsNullOrEmpty(keyword))
-                return _ProductCategoryRepository.GetMulti(x => x.Name.Contains(keyword) || x.Description.Contains(keyword));
+                return _ProductCategoryRepository.GetMulti(x => x.Name.Contains(keyword) || x.Description.Contains(keyword) ||x.Alias.Contains(keyword));
             else
                 return _ProductCategoryRepository.GetAll();
 

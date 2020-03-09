@@ -1,0 +1,6 @@
+﻿.has-error {
+    color: red;
+}
+.dropdownsp:hover .dropdown-contentsp {
+    display: block;
+}
