@@ -71,7 +71,7 @@
             routes.MapRoute(
                    name: "Page",
                    url: "trang/{alias}.html",
-                   defaults: new { controller = "Page", action = "Checkout", alias = UrlParameter.Optional },
+                   defaults: new { controller = "Page", action = "Index", alias = UrlParameter.Optional },
                    namespaces: new string[] { "Presentation.Controllers" }
                );
 

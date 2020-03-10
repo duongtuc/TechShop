@@ -6,6 +6,8 @@
     using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
+    using System.Data.Entity.Validation;
+    using System.Diagnostics;
     using System.Linq;
     using TechShop.Common;
     using TechShop.Model.Models;
@@ -31,6 +33,10 @@
             CreateFooter(context);//seed data footer
 
             CreateSlide(context);//seed data slide
+
+            CreatePage(context); //seed data page
+
+            CreateContactDetail(context); //seed data contact
         }
 
         private void CreateUser(TechShopDbContext context)
@@ -129,5 +135,76 @@
                 context.SaveChanges();
             }
         }
+
+        private void CreatePage(TechShopDbContext context)
+        {
+            if (context.Pages.Count() == 0)
+            {
+                try
+                {
+                    var page = new Page()
+                    {
+                        Name = "Giới thiệu",
+                        Alias = "gioi-thieu",
+                        Content = @"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium ",
+                        Status = true
+
+                    };
+                    context.Pages.Add(page);
+                    context.SaveChanges();
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    foreach (var eve in ex.EntityValidationErrors)
+                    {
+                        Trace.WriteLine($"Entity of type \"{eve.Entry.Entity.GetType().Name}\" in state \"{eve.Entry.State}\" has the following validation error.");
+                        foreach (var ve in eve.ValidationErrors)
+                        {
+                            Trace.WriteLine($"- Property: \"{ve.PropertyName}\", Error: \"{ve.ErrorMessage}\"");
+                        }
+                    }
+                }
+
+            }
+        }
+
+        private void CreateContactDetail(TechShopDbContext context)
+        {
+            if (context.ContactDetails.Count() == 0)
+            {
+                try
+                {
+                    var contactDetail = new ContactDetail()
+                    {
+                        Name = "Tech Shop",
+                        Address = "FLC Complex, Số 36 Phạm Hùng, Quận Nam Từ Liêm, Hà Nội",
+                        Email = "duongtuc.dev@gmail.com",
+                        Lat = 21.027615,
+                        Lng = 105.7785049,
+                        Phone = "0388658735",
+                        Website = "https://www.facebook.com/duongtuc132",
+                        Other = "",
+                        Status = true
+
+                    };
+                    context.ContactDetails.Add(contactDetail);
+                    context.SaveChanges();
+                }
+                catch (DbEntityValidationException ex)
+                {
+                    foreach (var eve in ex.EntityValidationErrors)
+                    {
+                        Trace.WriteLine($"Entity of type \"{eve.Entry.Entity.GetType().Name}\" in state \"{eve.Entry.State}\" has the following validation error.");
+                        foreach (var ve in eve.ValidationErrors)
+                        {
+                            Trace.WriteLine($"- Property: \"{ve.PropertyName}\", Error: \"{ve.ErrorMessage}\"");
+                        }
+                    }
+                }
+
+            }
+
+        }
+
     }
 }

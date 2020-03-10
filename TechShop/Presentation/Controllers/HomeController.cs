@@ -22,6 +22,8 @@ namespace Presentation.Controllers
             this._productCategoryService = productCategoryService;
             this._commonService = commonService;
         }
+
+        [OutputCache(Duration = 3600,Location = System.Web.UI.OutputCacheLocation.Client)]
         public ActionResult Index()
         {
             var slideModel = _commonService.GetSlides();
@@ -43,6 +45,7 @@ namespace Presentation.Controllers
 
 
         [ChildActionOnly]
+        [OutputCache(Duration = 3600)]
         public ActionResult Footer()
         {
             var footerModel = _commonService.GetFooter();

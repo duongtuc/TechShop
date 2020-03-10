@@ -193,7 +193,9 @@
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PageController.cs" />
     <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
@@ -961,6 +963,7 @@
     <Content Include="Assets\admin\plugins\icheck-bootstrap\icheck-bootstrap.min.css" />
     <Content Include="Assets\admin\plugins\jquery.min.js" />
     <Content Include="Assets\client\css\bootstrap.css" />
+    <Content Include="Assets\client\css\custom.css" />
     <Content Include="Assets\client\css\etalage.css" />
     <Content Include="Assets\client\css\fontawesome.min.css" />
     <Content Include="Assets\client\css\form.css" />
@@ -1019,6 +1022,7 @@
     <Content Include="Assets\client\images\wat.jpg" />
     <Content Include="Assets\client\images\zoom.png" />
     <Content Include="Assets\client\js\common.js" />
+    <Content Include="Assets\client\js\controller\contact.js" />
     <Content Include="Assets\client\js\fontawesome.min.js" />
     <Content Include="Assets\client\js\jquery.etalage.min.js" />
     <Content Include="Assets\client\js\jquery.flexisel.js" />
@@ -4892,6 +4896,9 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Product\Search.cshtml" />
     <Content Include="Views\Product\Detail.cshtml" />
+    <Content Include="Views\Product\ListByTag.cshtml" />
+    <Content Include="Views\Page\Index.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TechShop.Common\TechShop.Common.csproj">
