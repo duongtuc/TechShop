@@ -1,18 +1,39 @@
-﻿
+﻿@model Presentation.Models.LoginViewModel
+@using BotDetect.Web.Mvc;
 @{
-    Layout = null;
+    ViewBag.Title = "Đăng Nhập";
+    Layout = "~/Views/Shared/_Layouts.cshtml";
 }
 
-<!DOCTYPE html>
+<div class="account_grid">
+    <div class=" login-right">
+        <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ĐĂNG KÝ KHÁCH HÀNG</font></font></h3>
+        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nếu bạn có tài khoản với chúng tôi, vui lòng đăng nhập.</font></font></p>
+        @using (Html.BeginForm("Login", "Account", new { returnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(false, "", new { @class = "error" });
+            <div>
+                <span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tài khoản </font></font><label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">*</font></font></label></span>
+                @Html.TextBoxFor(m => m.UserName)
+            </div>
+            <div>
+                <span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mật khẩu </font></font><label><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">*</font></font></label></span>
+                @Html.PasswordFor(m => m.Password)
+            </div>
+            <div>
+                @Html.CheckBoxFor(m => m.RememberMe)
+                Nhớ mật khẩu?
+            </div>
+            <a class="forgot" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Quên mật khẩu? </font></font></a>
+            <font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><input type="submit" value="Đăng nhập"></font></font>
+        }
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Login</title>
-</head>
-<body>
-    <div> 
-        day la login
     </div>
-</body>
-</html>
+    <div class=" login-left">
+        <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">NHỮNG KHÁCH HÀNG MỚI</font></font></h3>
+        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Bằng cách tạo tài khoản với cửa hàng của chúng tôi, bạn sẽ có thể chuyển qua quy trình thanh toán nhanh hơn, lưu trữ nhiều địa chỉ giao hàng, xem và theo dõi đơn hàng của bạn trong tài khoản của bạn và hơn thế nữa.</font></font></p>
+        <a class="acount-btn" href="register.html"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tạo một tài khoản</font></font></a>
+    </div>
+    <div class="clearfix"> </div>
+</div>

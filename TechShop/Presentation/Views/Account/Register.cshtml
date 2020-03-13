@@ -1,0 +1,62 @@
+﻿@model Presentation.Models.RegisterViewModel
+@using BotDetect.Web.Mvc;
+@{
+    ViewBag.Title = "Đăng ký";
+    Layout = "~/Views/Shared/_Layouts.cshtml";
+}
+<link href="@BotDetect.Web.CaptchaUrls.Absolute.LayoutStyleSheetUrl" rel="stylesheet" type="text/css" />
+<div class="register">
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(false, "", new { @class = "error" })
+
+        if (ViewData["SuccessMsg"] != null)
+        {
+            <div class="alert alert-success" role="alert">
+                <strong>Chúc mừng bạn! </strong> đã đăng ký thành công.
+                <br />Vui lòng click <a href="/dang-nhap.html">vào đây </a>để đăng nhập.
+            </div>
+        }
+        <div class="  register-top-grid">
+            <h1>Thông tin cá nhân</h1>
+            <div class="mation">
+                <span>Họ Tên<label style="color:red">*</label></span>
+                @Html.TextBoxFor(m => m.FullName)
+
+                <span>Email<label style="color:red">*</label></span>
+                @Html.TextBoxFor(m => m.Email)
+
+                <span>Địa chỉ<label style="color:red">*</label></span>
+                @Html.TextBoxFor(m => m.Address)
+
+                <span>Điện Thoại<label style="color:red">*</label></span>
+                @Html.TextBoxFor(m => m.PhoneNumber)
+
+                <span>Tên Tài Khoản<label style="color:red">*</label></span>
+                @Html.TextBoxFor(m => m.UserName)
+
+                <span>Mật Khẩu<label style="color:red">*</label></span>
+                @Html.PasswordFor(m => m.Password)
+
+                @{
+                    MvcCaptcha registerCaptcha = new MvcCaptcha("registerCaptcha");
+                    registerCaptcha.UserInputID = "CaptchaCode";
+                }
+                @Html.Captcha(registerCaptcha)
+                @Html.TextBox("CaptchaCode")
+
+            </div>
+            <div class="clearfix"> </div>
+
+        </div>
+        <div class="clearfix"> </div>
+        <div class="register-but">
+            <input type="submit" value="Đăng Ký">
+            <div class="clearfix"> </div>
+        </div>
+    }
+
+
+</div>
+

@@ -19,6 +19,10 @@
     margin: 0.5em 0;
 }
 
+.login-right input[type="password"] {
+    width: 96%;
+}
+
 .register-but input[type="submit"] {
     background: #F97E76;
     color: #FFF;
