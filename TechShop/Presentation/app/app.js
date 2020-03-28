@@ -1,6 +1,10 @@
 ﻿(function () {
     angular.module('techShop', ['techShop.products',
         'techShop.products_categories',
+        'techShop.application_groups',
+        'techShop.application_roles',
+        'techShop.application_users',
+        'techShop.statistics',
         'techShop.common'])
         .config(config)
         .config(configAuthentication);

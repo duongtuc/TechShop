@@ -16,7 +16,7 @@
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(TechShop.Data.TechShopDbContext context)
@@ -37,8 +37,40 @@
             CreatePage(context); //seed data page
 
             CreateContactDetail(context); //seed data contact
+
+            CreateConfigTitle(context);//seed data title
         }
 
+        private void CreateConfigTitle(TechShopDbContext context)
+        {
+            if (!context.SystemConfigs.Any(x => x.Code == "HomeTitle"))
+            {
+                context.SystemConfigs.Add(new SystemConfig()
+                {
+                    Code = "HomeTitle",
+                    ValueString = "Trang chủ TechShop",
+
+                });
+            }
+            if (!context.SystemConfigs.Any(x => x.Code == "HomeMetaKeyword"))
+            {
+                context.SystemConfigs.Add(new SystemConfig()
+                {
+                    Code = "HomeMetaKeyword",
+                    ValueString = "Trang chủ TechShop",
+
+                });
+            }
+            if (!context.SystemConfigs.Any(x => x.Code == "HomeMetaDescription"))
+            {
+                context.SystemConfigs.Add(new SystemConfig()
+                {
+                    Code = "HomeMetaDescription",
+                    ValueString = "Trang chủ TechShop",
+
+                });
+            }
+        }
         private void CreateUser(TechShopDbContext context)
         {
             var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new TechShopDbContext()));
@@ -205,6 +237,5 @@
             }
 
         }
-
     }
 }

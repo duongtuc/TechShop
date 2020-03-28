@@ -47,8 +47,8 @@ namespace TechShop.Model.Models
         [Column(TypeName = "nvarchar")]
         public string CustomerId { set; get; }
 
-        //[ForeignKey("CustomerId")]
-        //public virtual ApplicationUser User { set; get; }
+        [ForeignKey("CustomerId")]
+        public virtual ApplicationUser User { set; get; }
 
         public virtual IEnumerable<OrderDetail> OrderDetails { set; get; }
     }

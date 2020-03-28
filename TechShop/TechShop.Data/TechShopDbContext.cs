@@ -11,7 +11,7 @@ namespace TechShop.Data
 {
     public class TechShopDbContext: IdentityDbContext<ApplicationUser>
     {
-        public TechShopDbContext():base("TechShopConnectionString")
+        public TechShopDbContext():base("TechShopConnectionStrings")
         {
             this.Configuration.LazyLoadingEnabled = false;
         }
@@ -54,7 +54,10 @@ namespace TechShop.Data
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<IdentityUserRole>().HasKey(i => new { i.UserId, i.RoleId }).ToTable("ApplicationUserRoles");
+            modelBuilder.Entity<IdentityUserLogin>().HasKey(i => i.UserId).ToTable("ApplicationUserLogins");
+            modelBuilder.Entity<IdentityRole>().ToTable("ApplicationRoles");
+            modelBuilder.Entity<IdentityUserClaim>().HasKey(i => i.UserId).ToTable("ApplicationUserClaims");
         }
     }
 }

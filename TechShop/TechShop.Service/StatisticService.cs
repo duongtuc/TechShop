@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TechShop.Common.ViewModels;
 using TechShop.Data.Repositories;
 
 namespace TechShop.Service
 {
     public interface IStatisticService
     {
-        //IEnumerable<RevenueStatisticViewModel> GetRevenueStatistic(string fromDate, string toDate);
+        IEnumerable<RevenueStatisticViewModel> GetRevenueStatistic(string fromDate, string toDate);
 
     }
     public class StatisticService : IStatisticService
@@ -19,9 +20,9 @@ namespace TechShop.Service
         {
             _orderRepository = orderRepository;
         }
-        //public IEnumerable<RevenueStatisticViewModel> GetRevenueStatistic(string fromDate, string toDate)
-        //{
-        //    return _orderRepository.GetRevenueStatistic(fromDate, toDate);
-        //}
+        public IEnumerable<RevenueStatisticViewModel> GetRevenueStatistic(string fromDate, string toDate)
+        {
+            return _orderRepository.GetRevenueStatistic(fromDate, toDate);
+        }
     }
 }

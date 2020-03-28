@@ -5,6 +5,9 @@
     Layout = "~/Views/Shared/_Layouts.cshtml";
     ViewBag.Title = "San Pham";
 }
+@section footerJS{
+    <script src="~/Assets/client/js/controller/shoppingCart.js"></script>
+}
 <div class="women-product">
     <div class=" w_content">
         <div class="women">
@@ -41,6 +44,7 @@
                         <h4><a href="@url"> @product.Name</a></h4>
                         <p>@product.Description</p>
                         @(product.Price == 0 ? "Liên hệ" : product.Price.ToString("N2"))
+                        <a class="now-get get-cart-in btnAddToCart" href="#" data-id="@product.ID">Thêm vào giỏ hàng</a>
                     </div>
                 </div>
 

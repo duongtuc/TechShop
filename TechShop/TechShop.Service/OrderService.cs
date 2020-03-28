@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TechShop.Common.ViewModels;
 using TechShop.Data.Infrastructure;
 using TechShop.Data.Repositories;
 using TechShop.Model.Models;
@@ -58,5 +59,7 @@ namespace TechShop.Service
         {
             _unitOfWork.Commit();
         }
+
+       
     }
 }
