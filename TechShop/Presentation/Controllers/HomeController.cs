@@ -23,7 +23,7 @@ namespace Presentation.Controllers
             this._commonService = commonService;
         }
 
-        [OutputCache(Duration = 3600,Location = System.Web.UI.OutputCacheLocation.Client)]
+        //[OutputCache(Duration = 3600,Location = System.Web.UI.OutputCacheLocation.Client)]
         public ActionResult Index()
         {
             var slideModel = _commonService.GetSlides();

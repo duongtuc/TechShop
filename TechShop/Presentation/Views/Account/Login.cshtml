@@ -27,7 +27,9 @@
             </div>
             <a class="forgot" href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Quên mật khẩu? </font></font></a>
             <font style="vertical-align: inherit;"><font style="vertical-align: inherit;"><input type="submit" value="Đăng nhập"></font></font>
+
         }
+        @Html.Partial("_ExternalLoginsListPartial", new Presentation.Models.ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
 
     </div>
     <div class=" login-left">
